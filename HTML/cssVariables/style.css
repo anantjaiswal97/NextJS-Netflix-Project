@@ -1,0 +1,72 @@
+/* css variables are used to avoid defining same property again and again */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* variable is defined using --<variableName>: <variable value> */
+/* my-var2 variable is accessible for itself and all the child elements of container class */
+.container{
+    padding: 40px;
+    --my-var-purple: purple;
+}
+
+/* since variable my-var is not scope of h1, bcz it is defined in box, so accessible only withing box class */
+/* there is a option to pass fallback value, if passed variable is not accessible by element  */
+h1{
+    text-align: center;
+    color: var(--my-var-purple,green);
+}
+
+/* my-var variable is defined in box class, so its scope is in all the child elements and class of box  */
+.box{
+    padding: 20px;
+    background-color: red;  
+    --my-var:#999;
+
+}
+
+/* using var() function, we get values of variable */
+.box h2{
+    margin-bottom: 20px; 
+    color: var(--my-var);
+}
+
+/* note these variable values can be changed using javascript, for pseudo elements like hover, for media queries
+depending on our requirement */
+
+
+@media(min-width:600px) {
+    .container{
+        --my-var-purple: blue;
+    }
+    
+}
+
+.box:hover{
+    --my-var: pink;
+}
+
+
+/* until now, we have seen local variables that are accessible to parent and child element, but
+not accessible to ancestor classes */
+
+/* we can also define global variable accessible among all the elemetns of website */
+
+:root {
+    --primary-text-color: #222;
+    --secondary-text-color:#444;
+    --card-background-colo:#fff;
+    --default-margin: 20px;
+}
+
+/* these varibales can used same using var() function. Also we can override these variable values like 
+below. When we add this dark class to an element, element will use these values*/
+
+.dark{
+    --primary-text-color: #fff;
+    --secondary-text-color:#ddd;
+    --card-background-colo:#fff;
+    --default-margin: 20px;
+}

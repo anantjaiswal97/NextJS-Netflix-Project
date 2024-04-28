@@ -1,0 +1,39 @@
+/* css transition allows to give duration between different element properties for smooth transition effect */
+
+.box{
+    margin: 100px auto;
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+
+    /* transition-duration defines how long transition will take */
+    transition-duration: 1s;
+
+    /* transition property tell on which property smooth transition effect will be shown */
+    /* by default its value is all */
+    /* NOTE: we should not define transition-property as all, because css will look for all css animatable 
+    properties before starting transition. Thsi will increase processing time and also introduce delay in website */
+    transition-property: all;
+
+    /* we should define individual comma separated values transition duration will be applied to background-color property only */
+    transition-property: background-color, transform;
+
+    /* transition-delay defines the delay before starting transition */
+    transition-delay: 1s;
+
+    /* transition-timing-function tells how transition will follow its path
+    ease: slow start-->fast--> slow end
+    ease-in: slow-start--->fast
+    ease-out: fast--->slow-end
+    ease-in-out: with slow start and slow end
+    linear: linear time,
+    cubic-bezier: lets you define your own values in cubic-cezier function
+    */
+    transition-timing-function: ease;
+}
+
+.box:hover{
+    background-color: purple;
+    border-radius: 40%;
+    transform: rotate(180deg);
+}

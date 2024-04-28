@@ -1,0 +1,200 @@
+/* css keyframes allows css to define animation to as many elements as you want as often as you wish  */
+
+/* keyframes will have following important properties
+animation-name,
+animation-duration,
+animation-delay,
+animation-iteration-count,
+animation-direction,
+animation-timing-function,
+animation-fill-mode
+
+*/
+
+
+body{
+    margin: 0;
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 300px;
+    height: 300px;
+    border: 2px solid white;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    
+    /*this let the css know, which keyframe rules animation will run on */
+    animation-name: circles;
+   
+    /* this is the duration for that much amount of time animation will complete its one iteration
+    this is actually 0% to 100% that we defined in keyframe */
+    animation-duration: 1s;
+    
+    /*this defines the number of iteration of animation  */
+    animation-iteration-count: 3;
+    /* this will run animation infinite times */
+    animation-iteration-count: infinite;
+
+    /* this defines animation direction. By defualt it is normal(0%-->25%-->50%-->75%-->100%) 
+    reverse: from 100%-->75%-->50%-->25%-->0%
+    alternate: one animation iteration in normal flow and another in reverse flow
+    alternate-reverse: one animation in reverse flow and another in normal flow
+    */
+    animation-direction: normal;
+    animation-direction: reverse;
+    animation-direction: alternate;
+    animation-direction: alternate-reverse;
+
+    /* this is same as we defined in transition tutorial */
+    animation-timing-function: ease;
+    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
+    animation-timing-function: ease-in-out;
+    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
+
+    /* animation-fill-mode specifies a style for the target element when the animation is not
+    playing(before it starts,after it ends or both) */
+    animation-name: slides-in-out;
+    animation-iteration-count: 1;
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-direction: normal;
+
+    /* before starting animation, element get value of 0% position depending on animation-direction
+    This means that element will not start animation from (0,0) coordinates which is by default, it
+    will start animation from 0% position if 0% position is not (0,0) coordinates. This can be observed by 
+    setting animation delay */
+    animation-fill-mode: backwards;
+
+    /* after the end of animation(based on animation direction and animation iteration count), element will 
+    retain 100% position. By default element comes back to origin position(0,0) after animation ends */
+    animation-fill-mode: forwards;
+
+    /* its will follow properties of both forward and backward */
+    animation-fill-mode: both;
+
+    /* this is default...element will be origin before starting and the end of animation */
+    animation-fill-mode: none;
+    
+}
+
+
+/* this way we define keyframe, which will hold our animation rules
+In this keyframe, we have defined the position of box at 0%,25%,50%,75%,100% of animation duration
+We can define any number of percent values in any order in keyframe */
+@keyframes circles {
+    0%, 100% {
+        transform: translate(0,0);
+    }
+
+    25% {
+        transform: translate(200px,0);
+    }
+
+    50% {
+        transform: translate(200px,200px);
+    }
+
+    75% {
+        transform: translate(0,200px);
+    }
+    
+}
+
+@keyframes slides-in-out {
+    0% {
+        transform: translate(-400px);
+    }
+
+    100% {
+        transform: translate(200px);
+    }
+}
+
+/* Example 1 Orbit animation */
+
+.container{
+    width: 300px;
+    height: 300px;
+    border: 2px solid white;
+    animation: orbit 1s linear infinite;
+    border-radius: 50%;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+@keyframes orbit {
+    /* we can also write from for 0% and to for 100% */
+    from{
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/* example 2: google assistant 4dots animation */
+
+body{
+    margin: 0;
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 200px;
+}
+
+.loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    animation: up-down 0.8s ease infinite alternate;
+}
+
+.dot:nth-child(2){
+    animation-delay: 0.1s;
+}
+
+.dot:nth-child(3){
+    animation-delay: 0.2s;
+}
+
+.dot:nth-child(4){
+    animation-delay: 0.3s;
+}
+
+@keyframes up-down{
+    from{
+        transform: translateY(-10px);
+    }
+
+    to{
+        transform: translateY(10px);
+    }
+}

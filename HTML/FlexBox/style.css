@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* all these properties flex-direction,flex-wrap,flex-flow,justidy-content,align-items,align-content are flex container properties
+and not of flex child properties */
+.container {
+    height: 400px;
+    border: 4px solid red;
+    display: flex;
+    
+    /* flex-wrap: wrap; */
+
+    /* in flex container flex-direction property determines the main, by default flex-direction=row is main axis and column direction is cross
+    axis. In order to change main axis into cross axis and vice versa change flex direction */
+    /* flex-direction: column; */
+    
+    /* gap: 10px; */
+    /* row-gap: 10px;
+    column-gap: 20px; */
+
+    /* flex flow is the shorthand property for both flex-wrap and flex-direction */
+    flex-flow: wrap row;
+    
+    /* justify-content: space-around; */
+    /* justify content wroks on main axis */
+    /* there are differnet values for justify content like (space-around,space-between,center,flex-start,flex-end) */
+    justify-content: center;
+    
+    /* align items make changes along the cross axis direction */
+    /* whenever we want to centre child boxes inside parent div container, we can use justify-content:center and align-items:center   */
+    align-items: center;
+    
+    /* align content to adjust row spacing along the cross axis direction */
+    /* align-content:space-between; */
+}
+
+
+.box {
+    border: 2px solid blue;
+    width: 80px;
+   
+    /* here flex-basis tells that each box will take 25 % of container i.e each row will have 4 boxes.
+    Note if extra margin or gap is given wraping will happen  */
+    flex-basis: 25%;
+    
+    /* margin: 10px; */
+
+}
+
+
+#box-5 {
+    /* by default order of all the child boxes in flex container is of order 0, here we defined box-1 
+    of order 1, hence box 1 will be shifted to the end. If I give box-4 order=2, then box-4 is of highest order
+    and it will be shifted at the end */
+    order: 1;
+    
+    /* if there is a spce left in the container, then the box for which flex-grow is configured will grow himself and consume extra 
+    space. And the box which is given bigger number of flex grow will grow at faster rate. If flex-grow for box-1=2 and flex-grow for 
+    box-4=3, then box-4 will grow faster rate than box-1  . By default value of flex-grow=1*/
+    flex-grow: 0;
+    
+    /* flex shrink is opposite of flex-grow . Default value of flex-shring is 1, if we set flex-shrink=0 for any box,
+    then it will not shrink*/
+    /* flex-shrink:2; */
+}
+
+#box-4 {
+    flex-grow: 0;
+}
+
+#box-3 {
+    /* flex-basis basically define the initial length of box in the direction of main axis  */
+    /* flex-basis: 200px; */
+
+    /* align-self allows to align particular box along the cross-axis */
+    align-self: stretch;
+}

@@ -1,0 +1,48 @@
+/* media queries used for making the page responsive */
+
+
+body{
+    background-color: red;
+}
+
+/* using width we define responsive screen width */
+/* @media (width<=700px){
+    body{
+        background-color: green;
+    }
+} */
+
+/* we can also define width using max-width */
+/* this is same as defining width<=500px */
+@media(max-width: 500px){
+    body{
+        background-color: #444; 
+    }
+
+}
+
+@media (max-width: 200px){
+    body{
+        background-color: green;
+    }
+}
+
+/* min-width says width >=600px */
+@media (min-width: 600px){
+    body{
+        background-color: purple;
+    }
+}
+
+@media (min-width: 600px) and (max-width:800px){
+    body{
+        background-color: blue;
+    }
+}
+
+/* orientation is portraid when height is greater than width, otherwise it is landscape */
+/* @media (orientation: portrait){
+    body{
+        background-color: yellow;
+    }
+} */

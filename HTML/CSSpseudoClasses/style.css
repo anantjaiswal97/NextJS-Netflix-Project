@@ -1,0 +1,111 @@
+/* pseudo classes used to select particular state of an element */
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 40px;
+}
+
+/* link state: when element is not visited yet and not in hover state */
+.primary-btn:link{
+    color: green;
+}
+
+/* hover state: when we hover over an element */
+.primary-btn:hover{
+    color: red;
+    background-color: black;
+}
+
+/* visited state: when link is already visisted by user. In incongnito mode, visited state dont work */
+.primary-btn:visited{
+    color: orange;
+}
+
+/* active state: defines the state of link when it is being clicked */
+.primary-btn:active{
+    color: purple;
+}
+
+/* there are other pseudo classes, for input element. Pls go on w3 school to check list of them. */
+
+
+/* there are pseudo elements to select child of elements on the basis of n passed */
+
+/* select all the li element present inside ul element which are first child */
+ul li:first-child{
+    background-color: voilet;
+
+}
+
+/* select all li element inside ul which is the last child of ul */
+ul li:last-child{
+    background-color: red;
+}
+
+/* select li element inside ul, if it is present as 4th child of ui  */
+ul li:nth-child(4){
+    color: orangered;
+}
+
+/* selects all even numbered li element inside ul */
+/* nth child take inout as an+b */
+ul li:nth-child(2n){
+    background-color: pink;
+
+}
+
+/* select all li element present in 3n position inside ul for n>=0 */
+ul li:nth-child(3n){
+    background-color: violet;
+
+}
+
+
+ul li:nth-child(2n+1){
+    background-color: yellow;
+
+}
+
+/* select p elements inside div, which are present as even numbered child of div */
+div p:nth-child(2n){
+    background-color: blue;
+}
+
+
+/* We also have pseudo elements to select particular part of an element */
+/* pseudo elements are defined using double colon :: */
+
+/* to select first letter of h2 element  */
+h2::first-letter{
+    font-size: 3rem;
+}
+
+/* to select first line of p element */
+p::first-line{
+    background-color: brown;
+}
+
+
+/* before and after selector used to select before and after particular element */
+/* note whatever content we have written in before and after cannot get selected
+becuase this content is actually not present in dom */
+h2::before{
+    content: 'this is start';
+}
+
+h2::after{
+    content: 'this is end';
+}
+
+/* we can use in many cases. like we can create class important and whomever element i assign class 
+important will these styling */
+
+.important::after{
+    content:'important';
+    background-color: red;
+    color: white;
+    padding: 0.2rem;
+    font-size: 0.5rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}

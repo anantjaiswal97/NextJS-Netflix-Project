@@ -1,0 +1,106 @@
+/* transform property allows to rotate,scale,skew,move etc elements in 2d or 3d direction */
+
+/* few important transform properties:
+scale
+skew
+translate
+rotate
+*/
+
+
+/* 
+axis in CSS
+
+
+     _________________________________________----------positive x direction
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+    |
+
+    -- +y direction
+
+
+*/
+.container{
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    margin: 80px auto;
+
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* transform properties scale up and scale down dimensions of particular element */
+    /* this is scaled 1,5 times equally in x and y direction */
+    transform: scale(1.5);
+
+    /* we can define to scale only along x direction */
+    transform: scaleX(2);
+
+    /* we can define scaling scale(x-direction scale,y-direction scale) */
+    transform: scale(2,1.5);
+
+    /* scalez scales in 3d direction */
+    transform: scaleZ(2);
+
+    /* skew used to skew box along x direction and y direction */
+    transform: skew(20deg,-40deg);
+    /* skew along x directon 20deg only */
+    transform: skew(20deg);
+
+    /* translate used to shift whole element along x direction and y direction */
+    /* translate shifts the center of box along mentioned direction */
+    transform: translate(20px);
+
+
+    transform: translate(20px,-30px);
+
+    transform: translate(50%);
+
+    /* this is commonly used to adjust element in the center */
+    transform: translate(50%,50%);
+
+    /* rotate 20 deg around Z axis */
+    transform: rotate(20deg);
+
+    /* rotate 30 deg around x axis */
+    transform: rotateX(30deg);
+
+    /* we can define multiple transform property in once */
+    transform: scale(1.2) translate(20%) skew(20deg,40deg) rotate(-40deg);
+
+    /* we have another property transform-origin which basically shifts the origin */
+    /* by default origin is center of box and it is rotated around that */
+    /* transform: rotate(20deg); */
+
+    /* we have shifted origin now to the top left i.e (0%,0%) */
+    transform-origin: top left;
+
+    /* this is by default origin of box */
+    transform-origin: 50% 50%;
+
+    /* origin is shifted 100px along xdirection and 200px along y direction */
+    transform-origin: 100px 200px;
+    transition: 0.5s ease;
+    transform: rotate(0);
+
+
+}
+
+.box:hover{
+    transform: rotate(20deg);   
+}

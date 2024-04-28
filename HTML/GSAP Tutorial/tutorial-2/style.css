@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container{
+    width: 90vw;
+    height: 100vh;
+    padding: 20px;
+    border: 10px solid blue;
+    margin-inline:auto ;
+    display: flex;      
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    margin-top: 200px;
+}
+
+
+.box-1{
+    border: 2px solid white;
+    color: white;
+    font-size: 30px
+
+}
+
+.box-2{
+    border: 2px solid white;
+    color: white;
+    font-size: 30px
+}
+
+.box-3{
+    border: 2px solid white;
+    color: white;
+    font-size: 30px
+}

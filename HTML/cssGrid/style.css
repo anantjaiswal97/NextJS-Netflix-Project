@@ -1,0 +1,147 @@
+/* CSS GRID CONTAINER:
+css grid is used to manage boxes like flex, but in 2 dimentional area
+*/
+
+/* CSS GRID CONTAINER PROPERTIES */
+/*
+ gap,
+grid-template-columns
+grid-template-rows
+justify-content
+align-content
+align-items
+ */
+
+/* GRID CHILD ITEM PROPERTIES */
+/* 
+justify-self
+align-self
+grid-column
+grid-row
+grid-area
+ */
+
+
+
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ .container{    
+    border: 2px solid red;
+    height: 400px;
+    /* padding: 200px; */
+    /* by setting diaplay=grid, we are making the container grid box */
+    display: grid;
+
+    /* gap: defines the gap between the rows and columns of grid. This is shorthand property for row gap and
+    column gap */
+    gap: 10px;
+
+    /* grid-template-columns: To define width of different columns in grid, we use this property
+    by default grid contains 1 column only. We can define relative as well as alsolute units */
+    grid-template-columns: 100px 200px 300px;
+    grid-template-columns: 20% 20% 60%;
+    grid-template-columns: 20vw 60vw;   
+
+    /* we can define columns widths in terms of fractions also. This is similar to defining columns widths in terms of ratio*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 3fr;
+
+    /* we can use repeat function also */
+    grid-template-columns: repeat(4,100px);
+    grid-template-columns: repeat(4,1fr);
+
+    /* we can also use auto. It automatically adjust columns in remaining existing space */
+    /* first column will be of 200px and remaining 2 columns divide equally in remainng space */
+    grid-template-columns: 200px auto auto;
+    grid-template-columns: auto auto auto auto;  
+
+    grid-template-columns: 200px 200px 300px 150px;
+
+    /* grid-template rows used to define row heights in a grid */ 
+    /* first two rows are of height 200px and 80px. Reamaining rows will take their default size */
+    /* grid-template-rows: 200px 80px; */
+
+    /* grid-auto-rows define heights for remaining rows which are not defined in grid-template-rows */  
+    /* grid-auto-rows: 150px; */
+
+    /* justify-content used to arrange grid columns along x axis */
+    justify-content: space-around;  
+    justify-content: space-evenly;
+    justify-content: space-between;
+    justify-content: center;
+
+    /* align-content used to arrange or adjust boxes along y axis  */
+    /* by default value of align-content is stretch */
+    /* align-content: space-between; */
+
+    /* align items used align boxes inside stretched div box i.e keeping in mind align-centent is set as stretched.
+    This is used to arrange boxes in their imaginary align-content=stretched div box */
+    /* align-items: end    ; */
+
+    /* grid-template-areas used to assign names to the boxes */
+    /* in this way we define the whole grid area wise */
+    grid-template-areas: "hdr hdr hdr hdr"
+                          "sbr main main main"
+                          "sbr main main main"
+                          "ftr ftr ftr ftr";
+ }
+
+ .box{
+    border: 2px solid green;    
+    padding: 12px;
+ }
+
+ #box-1{    
+    background-color: aqua;
+
+    /* justify-self: used to arrange or align individual boxes in imaginary stretched div. This is similar to align-items, but
+    align-items applies to all the boxes in the grid. This applies to individual boxes */
+    /* justify-self: center; */
+    
+    /* align-self: same as justify-self but along the y axis direction and justify-self arranges along x-axis direction */
+    /* align-self: end; */
+
+    /* grid-column: is a shorthand property for grid-column-start / grid-column-end. This is used to span indivudual boxes
+    to take other column space */
+    /* pls note indexing of columns here. */
+    grid-column: 1/3; 
+     
+    /*we can also use span, if we dont know end indexing clearly. It means box1 start from 1 index and spans to cover area of 3 columns */
+    grid-column: 1/ span 3;
+
+    /* we also have negative indexing here. If we want start from first column and span till last column, then
+    we can define like this */
+    grid-column: 1/-1;
+    /* grid-row is same as grid-column but along y direction.  */
+    grid-row: 1/3;
+
+    /* grid-area: is shorthand property fro grid rows and grid-column 
+          row-start/column start/row-end/column-end
+    */
+    grid-area: 1/2/3/4;
+
+ } 
+
+ 
+ /* for grid template area */
+ #box-2{
+    grid-area: hdr;
+ }
+
+ #box-3{
+    grid-area: sbr;
+ }
+
+ #box-3{
+    grid-area: main;
+ }
+
+ #box-3{
+    grid-area: main;
+ }
+
+ 

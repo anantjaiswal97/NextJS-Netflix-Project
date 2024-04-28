@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>News Website</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="container nav-container flex">
+            <div class="company-logo-section-box">
+                <a href="#" class="company-logo-section">
+                    <img src="./assets/logo.png" class="company-logo-image" alt="companyLogo">
+                </a>
+            </div>
+            
+            <div class="nav-links-section-box">
+                <ul class="nav-links-section flex">
+                    <l1>IPL</l1>
+                    <l1>Finance</l1>
+                    <l1>Politics</l1>
+                </ul>
+            </div>
+
+            <div class="search-bar-section-box flex">
+                <input type="text" placeholder="e.g Science" class="search-bar">
+                <div class="search-btn">Search</div>
+            </div>
+
+            
+        </div>
+    </nav>
+
+    <main>
+        <div class="card-container container flex" id="card-container">
+            <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas iusto cum soluta a, ad hic est ipsam perferendis earum tempora?</p> -->
+        </div>
+
+
+    </main>
+
+
+    <!-- whatever we define in template does not remain in document view -->
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-placeholder">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End gadget 26/08/2023</h6>
+                <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed illo itaque iusto nihil commodi ut ratione nostrum, necessitatibus maxime ducimus.</p>
+            </div>
+        </div>
+    </template>
+
+<script src="script.js"></script>
+</body>
+</html>

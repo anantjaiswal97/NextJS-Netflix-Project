@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>DOM manipulation</title>
+</head>
+<body>
+    
+    <div class="container" id="container">
+        <!-- on click is an event handler, which is triggered when box1 is clicked -->
+        <div class="box" id="box-1" onclick="myFunction()" >box-1</div>
+
+        <!-- this will trigger mouseMove() function when we move our mouse in box2 -->
+        <div class="box random" id="box-2" onmousemove="mouseMove()">box-2</div> 
+         <!--this event will be trigger when we hover mouse pointer over box3  -->
+        <div class="box" id="box-3" onmouseover="mouseOver()">box-3</div>
+
+
+        <div class="box random" id="box-4" >box-4</div>
+
+        <!-- this event will be triggered when keyboard key is pressed, but note it is not triggered for backspace and arrow keys -->
+        <input type="text" onkeypress="keyPress()">
+    </div>
+
+    <input type="text" id="input-1" onkeydown="keyDown()">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis expedita explicabo deserunt neque ipsam aliquid exercitationem perspiciatis mollitia deleniti at, quis nemo doloremque doloribus, laboriosam nesciunt distinctio quae! Vero, sed?</p>
+
+    
+    <!-- <div class="container">
+        <div class="boxes" id="box-1" >box-1</div>
+        <div class="boxes" id="box-2">box-2</div>  
+        <div class="boxes" id="box-3">box-3</div>
+        <div class="boxes" id="box-4">box-4</div>
+    </div> -->
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

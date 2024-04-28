@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,900&family=Poppins:wght@300;400;700&family=Raleway:wght@500&family=Roboto:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+    color: var(--primary-text-color);
+}
+
+p{
+    font-family: 'Roboto',sans-serif;
+    color: var(--secondary-text-color);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+/* utility-classes */
+
+.flex{
+    display: flex;
+    align-items: center;
+}   
+
+.container{
+    width:90vw;
+    padding: 10px 20px;
+    margin: 0 auto;
+}   
+
+/* navigation bar classes */
+
+nav{
+    background-color: #f3faff;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right:0;
+    left:0;
+}
+
+
+
+.nav-container{
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.company-logo-image{
+    width:100px
+}
+
+.nav-links-section{
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.search-bar-section-box{
+    align-items: center;
+    gap:8px;
+    justify-content: space-between;
+}
+
+.search-bar{
+    font-family: 'Poppins',sans-serif;
+    padding: 2px 15px;
+    border: 1px solid rgb(179, 214, 226);
+    border-radius: 3px;
+}
+
+.search-btn{
+    background-color: var(--accent-color);
+    border-radius: 3px;
+    padding: 3px 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+
+}
+
+
+/* we need to give margin to main block because, our header
+nav bar is of position fixed. The element having position fixed goes out of view. If we dont give margintop to main class
+we can observe main block positioned beside nav block. As per structuring main block should occupy its position aafter nav block, but due to position fixed
+nav is not visible to main block */
+main{
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.card-container{
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card{
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    /* here we have to set overflow hidden in order to reflect border radius, otherwise card header(img) will be flowing outside
+    the defined border and border radius wont reflect on image  */
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+
+.card-header img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content{
+    padding: 12px;
+}
+
+.news-source{
+    margin-block: 12px;
+}
